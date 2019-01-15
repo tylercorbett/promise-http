@@ -1,10 +1,10 @@
 const fsPromises = require('fs').promises;
-const copyFile = require('../lib/copy');
+const copy = require('../lib/copy');
 
 
 describe('promise tests', () => {
   it('copys a source file into a destination file', () => {
-    copyFile('./http.md', './http-copy.md')
+    copy('./http.md', './http-copy.md')
       .then(() => {
         return Promise.all([
           fsPromises.readFile('./http'),

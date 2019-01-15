@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const fsPromises = require('fs').promises;
 
 fsPromises.readFile('./http.md', { encoding: 'utf8' })
