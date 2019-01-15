@@ -1,7 +1,8 @@
 const transform = require('../lib/transform');
 
+
 describe('transform', () => {
-  it('transforms some file', () => {
+  it.skip('transforms some file', () => {
     return transform('./transform.txt')
       .then(transTxt => {
             
