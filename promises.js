@@ -9,12 +9,3 @@ fsPromises.writeFile('test.txt', 'testing123')
   .catch(err => console.error(err));
 
 
-function copyFile(src, dst) {
-  fsPromises.readFile(src, { encoding: 'utf8' })
-    .then(data => fsPromises.writeFile(dst, data)
-      .catch(err => console.error(err))
-    );
-}
-
-copyFile('./http.md', 'test.txt');
-
