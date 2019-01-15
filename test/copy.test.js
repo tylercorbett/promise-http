@@ -3,7 +3,7 @@ const copy = require('../lib/copy');
 
 
 describe('promise tests', () => {
-  it('copys a source file into a destination file', () => {
+  it('copies a source file into a destination file', () => {
     copy('./http.md', './http-copy.md')
       .then(() => {
         return Promise.all([
