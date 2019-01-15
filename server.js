@@ -19,7 +19,21 @@ http.createServer((req, res) => {
   }
 
   res.setHeader('Content-Type', 'text/html');
-  res.end(`<html><head><title>Testing</title></head><body><h1>${message}</h1></body></html>`);
+
+  res.end(`
+  <html>
+    <head>
+        <title>
+            Testing
+        </title>
+    </head>
+    <body>
+        <h1 style="color:purple">
+            ${message}
+        </h1>
+    </body>
+  </html>
+  `);
 })
   .listen(7890);
 
