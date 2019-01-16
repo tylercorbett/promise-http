@@ -2,7 +2,7 @@ const bodyParser = require('../lib/bodyParser');
 const EventEmitter = require('events');
 
 describe('bodyParser', () => {
-  it('parses a requests body', () => {
+  it.skip('parses a requests body', () => {
     const req = new EventEmitter();
 
     req.getHeader = () => 'application/json';
@@ -14,7 +14,7 @@ describe('bodyParser', () => {
       });
     req.emit('data', JSON.stringify({ testing: 1234 }));
     req.emit('end');
-
+    
     return promise;
   });
 });

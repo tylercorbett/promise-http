@@ -27,7 +27,7 @@ describe('app', () => {
       .post('/characters')
       .send({ 1234: ['My favorite character'] })
       .then(res => {
-        expect(res.status).toEqual(200);
+        expect(res.status).toEqual(204);
       });
   });
 });
