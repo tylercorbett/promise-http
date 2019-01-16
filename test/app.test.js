@@ -4,9 +4,10 @@ const app = require('../lib/app');
 describe('app', () => {
   it('has a tester route', () => {
     return request(app)
-      .get('/you?name=ryan')
+      .post('/you')
+      .send({ text: 'This is a note' })
       .then(res => {
-        expect(res.body).toEqual({ hi: 'there ryan' });
+        expect(res.body).toEqual({ text: 'This is a note' });
       });
   });
 });
