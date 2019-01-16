@@ -11,11 +11,10 @@ describe('rick and morty api tests', () => {
         });
       });
   });
-  it.only('returns a list of 20 characters', () => {
+  it('returns a list of 20 characters', () => {
     return getCharacters()
       .then(characters => {
         expect(characters.length).toEqual(20);
-        expect(characters[0].name).toEqual('Rick Sanchez');
       });
   });
 });

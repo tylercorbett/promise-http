@@ -4,7 +4,7 @@ const app = require('../lib/app');
 jest.mock('../lib/services/__mocks__/rickAndMortyApi');
 
 describe('app', () => {
-  it('has a tester route', () => {
+  it('gets a character based on id given', () => {
     return request(app)
       .get('/character/1')
       .then(res => {
@@ -12,6 +12,15 @@ describe('app', () => {
           name: 'Rick Sanchez',
           status: 'Alive',
           species: 'Human'
+        });
+      });
+  });
+  it('returns 20 character names', () => {
+    return request(app)
+      .get('/characters')
+      .then(res => {
+        expect(res.body).toEqual({
+
         });
       });
   });
