@@ -1,4 +1,4 @@
-const getCharacter = require('../../lib/services/rickAndMortyApi');
+const { getCharacter, getCharacters } = require('../../lib/services/rickAndMortyApi');
 
 describe('rick and morty api tests', () => {
   it('gets a character by id', () => {
@@ -9,6 +9,13 @@ describe('rick and morty api tests', () => {
           status: 'Alive',
           species: 'Human'
         });
+      });
+  });
+  it.only('returns a list of 20 characters', () => {
+    return getCharacters()
+      .then(characters => {
+        console.log('characters', characters);
+        expect(characters).toEqual(characters);
       });
   });
 });
