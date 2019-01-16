@@ -15,13 +15,11 @@ describe('app', () => {
         });
       });
   });
-  it('returns 20 character names', () => {
+  it('returns 2 character names', () => {
     return request(app)
       .get('/characters')
       .then(res => {
-        expect(res.body).toEqual({
-
-        });
+        expect(res.text.length).toEqual(2661);
       });
   });
 });
