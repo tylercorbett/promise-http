@@ -22,5 +22,13 @@ describe('app', () => {
         expect(res.text.length).toEqual(2661);
       });
   });
+  it('can add note to character based on id', () => {
+    return request(app)
+      .post('/characters')
+      .send({ 1234: ['My favorite character'] })
+      .then(res => {
+        expect(res.status).toEqual(200);
+      });
+  });
 });
 
