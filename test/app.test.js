@@ -19,7 +19,7 @@ describe('app', () => {
     return request(app)
       .get('/characters')
       .then(res => {
-        expect(res.text.length).toEqual(2661);
+        expect(res.text.length).toEqual(2682);
       });
   });
   it('can add note to character based on id', () => {
@@ -28,6 +28,13 @@ describe('app', () => {
       .send({ 1234: ['My favorite character'] })
       .then(res => {
         expect(res.status).toEqual(204);
+      });
+  });
+  it('can get a character by id and their notes', () => {
+    return request(app)
+      .get('/characters/1')
+      .then(res => {
+        expect(res.status).toEqual(200);
       });
   });
 });
